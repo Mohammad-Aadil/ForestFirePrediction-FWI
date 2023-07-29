@@ -31,7 +31,7 @@ def predict_datapoint():
         Region = float(request.form.get('Region'))
 
         new_data_scaled=standard_scaler.transform([[Temperature,RH,Ws,Rain,FFMC,DMC,ISI,Classes,Region]])
-        result = regressor_model.predict(new_data_scaled)
+        result = regressor_modelce.predict(new_data_scaled)
         
         return render_template('home.html', result=result[0])
 
